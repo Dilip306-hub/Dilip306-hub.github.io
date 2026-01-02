@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilip Reddy - Portfolio</title>
+    <title>Dilip Reddy - Portfolio | Data Analyst & Software Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -17,7 +19,9 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#code-examples">Code</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -80,6 +84,7 @@
                     <span class="tag">Java</span>
                     <span class="tag">C</span>
                     <span class="tag">SQL</span>
+                    <span class="tag">JavaScript</span>
                 </div>
             </div>
             <div class="skill-group">
@@ -99,16 +104,18 @@
                     <span class="tag">NLP</span>
                     <span class="tag">OpenCV</span>
                     <span class="tag">Biometrics</span>
+                    <span class="tag">Scikit-learn</span>
                 </div>
             </div>
             <div class="skill-group">
-                <h3>🛠️ Tools</h3>
+                <h3>🛠️ Tools & Frameworks</h3>
                 <div class="skill-tags">
                     <span class="tag">Git</span>
                     <span class="tag">Jupyter</span>
                     <span class="tag">VS Code</span>
                     <span class="tag">Linux</span>
                     <span class="tag">Anaconda</span>
+                    <span class="tag">Flask</span>
                 </div>
             </div>
         </div>
@@ -123,55 +130,167 @@
                     <i class="fas fa-fingerprint"></i>
                 </div>
                 <h3>IoT Fingerprint Authentication</h3>
-                <p>A lightweight cancellable fingerprint template system for biometric authentication in IoT applications. Implements SIFT-based feature extraction.</p>
+                <p>A lightweight cancellable fingerprint template system for biometric authentication in IoT applications. Implements SIFT-based feature extraction and achieves high recognition accuracy.</p>
                 <div class="project-tags">
                     <span>Python</span>
                     <span>OpenCV</span>
                     <span>SIFT</span>
+                    <span>IoT</span>
                 </div>
                 <a href="https://github.com/Dilip306-hub/IoT-Fingerprint-Authentication" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="project-card">
                 <div class="project-header">
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <h3>Data Analysis Projects</h3>
-                <p>Collection of real-world data analysis projects with EDA, statistical analysis, and data visualization using Python libraries.</p>
+                <p>Collection of real-world data analysis projects with EDA, statistical analysis, and data visualization using Python libraries and Superset for interactive dashboards.</p>
                 <div class="project-tags">
                     <span>Python</span>
                     <span>Pandas</span>
                     <span>Data Viz</span>
+                    <span>Superset</span>
                 </div>
                 <a href="https://github.com/Dilip306-hub/Data-Analysis-Projects" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="project-card">
                 <div class="project-header">
                     <i class="fas fa-brain"></i>
                 </div>
                 <h3>Machine Learning Apps</h3>
-                <p>Hands-on ML projects covering supervised/unsupervised learning, NLP applications, sentiment analysis, and model optimization.</p>
+                <p>Hands-on ML projects covering supervised/unsupervised learning, NLP applications, sentiment analysis, and model optimization with real datasets.</p>
                 <div class="project-tags">
                     <span>ML</span>
                     <span>NLP</span>
                     <span>Scikit-learn</span>
+                    <span>TensorFlow</span>
                 </div>
                 <a href="https://github.com/Dilip306-hub" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="project-card">
                 <div class="project-header">
                     <i class="fas fa-code"></i>
                 </div>
                 <h3>DSA & Algorithms</h3>
-                <p>Implementation of data structures and algorithms with problem-solving exercises. Interview preparation materials and LeetCode solutions.</p>
+                <p>Implementation of data structures and algorithms with problem-solving exercises. Interview preparation materials and LeetCode solutions with detailed explanations.</p>
                 <div class="project-tags">
                     <span>Python</span>
-                    <span>Algorithms</span>
+                    <span>Java</span>
                     <span>DSA</span>
+                    <span>Algorithms</span>
                 </div>
                 <a href="https://github.com/Dilip306-hub" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section id="code-examples" class="code-examples">
+        <h2>Code Examples</h2>
+        <div class="code-tabs">
+            <button class="code-tab-btn active" data-language="python">Python</button>
+            <button class="code-tab-btn" data-language="java">Java</button>
+        </div>
+        
+        <div class="code-content">
+            <!-- Python Example -->
+            <div class="code-block active" id="python-code">
+                <h3>Data Analysis with Pandas</h3>
+                <pre><code class="language-python">import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+
+# Load and explore data
+df = pd.read_csv('data.csv')
+print(f"Dataset shape: {df.shape}")
+print(df.head())
+print(df.describe())
+
+# Data cleaning and preprocessing
+df.dropna(inplace=True)
+df['date'] = pd.to_datetime(df['date'])
+
+# Feature scaling
+scaler = StandardScaler()
+df_scaled = scaler.fit_transform(df[['feature1', 'feature2']])
+
+# Statistical analysis
+corr_matrix = df.corr()
+print(corr_matrix)
+
+# Visualization
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 6))
+plt.scatter(df['feature1'], df['feature2'])
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('Feature Relationship')
+plt.show()</code></pre>
+            </div>
+
+            <!-- Java Example -->
+            <div class="code-block" id="java-code">
+                <h3>Binary Search Tree Implementation</h3>
+                <pre><code class="language-java">public class BinarySearchTree {
+    class Node {
+        int data;
+        Node left, right;
+        
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
+    }
+    
+    private Node root;
+    
+    public void insert(int data) {
+        root = insertRec(root, data);
+    }
+    
+    private Node insertRec(Node root, int data) {
+        if (root == null) {
+            return new Node(data);
+        }
+        
+        if (data < root.data)
+            root.left = insertRec(root.left, data);
+        else if (data > root.data)
+            root.right = insertRec(root.right, data);
+            
+        return root;
+    }
+    
+    public boolean search(int data) {
+        return searchRec(root, data);
+    }
+    
+    private boolean searchRec(Node root, int data) {
+        if (root == null)
+            return false;
+            
+        if (root.data == data)
+            return true;
+        else if (data < root.data)
+            return searchRec(root.left, data);
+        else
+            return searchRec(root.right, data);
+    }
+    
+    // Inorder traversal: Left -> Root -> Right
+    public void inorder() {
+        inorderRec(root);
+        System.out.println();
+    }
+    
+    private void inorderRec(Node root) {
+        if (root != null) {
+            inorderRec(root.left);
+            System.out.print(root.data + " ");
+            inorderRec(root.right);
+        }
+    }
+}</code></pre>
             </div>
         </div>
     </section>
@@ -189,6 +308,11 @@
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
             </a>
+            <a href="mailto:booreddyd@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
