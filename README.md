@@ -9,7 +9,8 @@ It showcases my work as a **Data Analyst**, **Software Developer** including pro
 
 Visit the live portfolio:
 
-> https://dilip306-hub.github.io
+https://dilip306-hub.github.io/portfolio/
+
 
 ---
 
